@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins','sans-serif';
+    box-sizing: border-box;
+
+}
+body{
+    background: #b28768;
+}
+.app{
+    position: relative;
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.app h1{
+    font-size: 25px;
+    color: #b28768;
+    font-weight: 600;
+    border-bottom: 1px solid #b28768;
+    padding-bottom: 35px;
+}
+.quiz{
+    padding: 25px 0;
+}
+.quiz h2{
+    font-size: 18px;
+    color:black;
+    font-weight: 600;
+}
+.btn {
+    background: #fff;
+    color:#222;
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid #b28768;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn:hover:not([disabled]){
+    background: #b28768;
+    color: #fff;
+}
+.btn:disabled{
+    cursor: no-drop;
+}
+#next-btn{
+    background:#b28768;
+    color:#fff;
+    font-weight: 500;
+    width: 125px;
+    border:0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+.correct{
+    background-color: #9aeabc;
+}
+.incorrect{
+    background-color: #ff9393;
+}
+#timer{
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    font-size: 18px;
+    color: #b28768;
+}
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  margin-bottom: 20px;
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #b28768; 
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+#question-count {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #b28768;
+    text-align: left;
+    font-weight: 500;
+}
+@keyframes flash {
+  0% { color: red; }
+  50% { color: darkred; }
+  100% { color: red; }
+}
+
+.flash {
+  animation: flash 0.9s infinite;
+}
+.welcome-screen {
+  text-align: center;
+  margin-top: 200px;
+}
+.welcome-screen h1 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.welcome-screen input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #b28768;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+#start-btn {
+  background: white;
+  color: #b28768;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+#start-btn:hover {
+  background: #b28768;
+  color: white;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }   
+  to { opacity: 1; }     
+}
+.welcome-screen, .app {
+  animation: fadeIn 1s ease-in;
+}
+#welcome-message {
+    color: #b28768;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.result-card {
+    background: #fff8f1;
+    border: 1px solid #b28768;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.result-card h2 {
+    color: #b28768;
+    margin-bottom: 15px;
+}
+
+.result-card p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #333;
+}
+#scoreChart {
+    margin-top: 20px;
+    width: 130px !important;
+    height: 130px !important;
+}
+
+.result-card {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;             
+  gap: 20px;                      
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column; 
+  gap: 8px;
+}
