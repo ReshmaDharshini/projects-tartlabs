@@ -61,6 +61,7 @@ let quizStartTime = 0;
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
+    shuffleArray(questions);
     nextButton.innerHTML = "Next";
     timerElement.style.display = "block";
     quizStartTime = Date.now();
@@ -221,12 +222,25 @@ nextButton.addEventListener("click", ()=> {
     }
 })
 
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Enter" && nextButton.style.display === "block"){
+        nextButton.click();
+    }
+});
+
 function updateProgressBar() {
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
   progressBar.style.width = `${progress}%`;
 
   const questionCount = document.getElementById("question-count");
   questionCount.innerHTML = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+}
+
+function shuffleArray(questions) {
+    for (let i = questions.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
 }
 
 startQuiz();
